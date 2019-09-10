@@ -5,6 +5,8 @@ ADD . /usr/src/app
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ Asia/Shanghai
 
+RUN yum install https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+
 RUN chmod 777 /usr/src/app/chromedriver
 ## install python requirements 
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider --no-cache-dir -r requirements.txt
