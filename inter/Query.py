@@ -18,6 +18,7 @@ class query:
                  ticke_peoples_num, station_dates=None, ):
         self.session = session
         self.httpClint = HTTPClient(TickerConfig.IS_PROXY)
+        self.httpClint.set_cookies(self.session.cookies)
         self.urls = urlConf.urls
         self.from_station = from_station
         self.to_station = to_station
@@ -117,7 +118,7 @@ class query:
                                             continue
                                         else:
                                             if ticket_num != "有" and self.ticke_peoples_num > ticket_num:
-                                                if self.session.is_more_ticket:
+                                                if TickerConfig.IS_MORE_TICKET:
                                                     print(
                                                         u"余票数小于乘车人数，当前余票数: {}, 删减人车人数到: {}".format(ticket_num, ticket_num))
                                                     is_more_ticket_num = ticket_num
