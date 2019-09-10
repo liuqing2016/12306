@@ -7,7 +7,7 @@ ENV TZ Asia/Shanghai
 
 RUN chmod 777 /usr/src/app/chromedriver
 ## install python requirements 
-RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider --no-cache-dir -r requirements.txt
+RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider --no-cache-dir -r requirements.txt
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 
 
 ## install ntpdate, not accept but saving code
