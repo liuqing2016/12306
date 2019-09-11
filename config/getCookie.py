@@ -13,8 +13,15 @@ def getDrvicesID(session):
     print("cookie获取中")
     if TickerConfig.COOKIE_TYPE is 1:
         from selenium import webdriver
+        from selenium.webdriver.chrome.options import Options
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-gpu')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        
         cookies = []
-        driver = webdriver.Chrome(executable_path=TickerConfig.CHROME_PATH)
+        driver = webdriver.Chrome(executable_path=TickerConfig.CHROME_PATH,chrome_options)
         driver.get("https://www.12306.cn/index/index.html")
         time.sleep(10)
 
