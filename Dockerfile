@@ -2,6 +2,7 @@ FROM python:3.7.4
 WORKDIR /usr/src/app
 ENV TZ Asia/Shanghai
 
+RUN apt-get update 
 RUN apt-get install chrome
 ## install python requirements 
 RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider --no-cache-dir -r requirements.txt
