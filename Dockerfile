@@ -18,13 +18,14 @@ RUN apt-get install -y \
     google-chrome-stable \
     --no-install-recommends
     
-## install python requirements 
-RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider --no-cache-dir -r requirements.txt
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 
 
 ADD . /usr/src/app
 ENV DEBIAN_FRONTEND noninteractive
 RUN chmod 777 /usr/src/app/chromedriver
+
+## install python requirements 
+RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pyspider --no-cache-dir -r requirements.txt
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 
 
 ## install ntpdate, not accept but saving code
 #RUN echo 'deb http://mirrors.163.com/debian/ jessie main non-free contrib \
