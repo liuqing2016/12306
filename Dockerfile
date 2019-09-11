@@ -35,6 +35,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 #	&& apt-get install ntpdate -y \
 
 #EXPOSE 5010
-CMD ["sh"]
-#CMD [ "python", "run.py" ]
+#CMD ["sh"]
+CMD [ "python", "run.py" ]
 #ENTRYPOINT [ "python", "run.py" ]
