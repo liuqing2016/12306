@@ -21,7 +21,7 @@ def getDrvicesID(session):
         chrome_options.add_argument('--disable-dev-shm-usage')
         
         cookies = []
-        driver = webdriver.Chrome(executable_path=TickerConfig.CHROME_PATH,chrome_options)
+        driver = webdriver.Chrome(executable_path=TickerConfig.CHROME_PATH,chrome_options=chrome_options)
         driver.get("https://www.12306.cn/index/index.html")
         time.sleep(10)
 
