@@ -232,7 +232,7 @@ urls = {
         "req_type": "get",
         "Referer": "https://kyfw.12306.cn/otn/leftTicket/init",
         "Host": "kyfw.12306.cn",
-        "re_try": 10,
+        "re_try": 1,
         "re_time": 0.01,
         "s_time": 0.01,
         "is_logger": False,
@@ -244,9 +244,9 @@ urls = {
         "req_type": "post",
         "Referer": "https://kyfw.12306.cn/otn/leftTicket/init",
         "Host": "kyfw.12306.cn",
-        "re_try": 10,
-        "re_time": 0.3,
-        "s_time": 0.1,
+        "re_try": 1,
+        "re_time": 1,
+        "s_time": 1,
         "is_logger": True,
         "is_json": True,
     },
@@ -587,6 +587,16 @@ urls = {
         "is_json": True,
     },
 
-
-
+    "autoVerifyImage": {  # 云打码接口
+        "req_url": "/verify/base64/",
+        "req_type": "post",
+        "Referer": "",
+        "Host": "34.97.127.118:8000/",
+        "re_try": 2,
+        "re_time": 2,
+        "s_time": 2,
+        "is_logger": True,
+        "is_json": True,
+        "httpType": "http"
+    },
 }
